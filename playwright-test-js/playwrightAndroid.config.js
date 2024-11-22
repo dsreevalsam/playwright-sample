@@ -6,7 +6,9 @@ const config = {
   testMatch: '**/*.spec.js',
   timeout: 300000,
   workers: 4,
-  use: {},
+  use: {
+    baseURL: 'https://duckduckgo.com'
+  },
   projects: [
     // -- LambdaTest Config --
     // name in the format: deviceName:platformVersion:platformName@lambdatest

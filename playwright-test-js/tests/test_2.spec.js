@@ -3,7 +3,7 @@ const { expect } = require('@playwright/test')
 
 test.describe('Browse LambdaTest in different search engines', () => {
   test('Search LambdaTest Blog on DuckDuckGo', async ({ page }) => {
-    await page.goto('https://duckduckgo.com')
+    await page.goto('/')
     let element = await page.locator("[name=\"q\"]");
     await element.click();
     await element.type("LambdaTest Blog");

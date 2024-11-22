@@ -3,7 +3,7 @@ const { expect } = require('@playwright/test')
 
 test.describe.skip('Browse LambdaTest in different browser contexts', () => {
   test('Search LambdaTest & LambdaTest Blog on DuckDuckGo', async ({ page }, testInfo) => {
-    await page.goto('https://duckduckgo.com')
+    await page.goto('/')
     let element = await page.locator("[name=\"q\"]");
     await element.click();
     await element.type("LambdaTest");
@@ -12,7 +12,7 @@ test.describe.skip('Browse LambdaTest in different browser contexts', () => {
 
     // Create new browserContext in the same window
     const newPage = await page.context().newPage(testInfo.project.use)
-    await newPage.goto('https://duckduckgo.com')
+    await newPage.goto('/')
     const searchElement = await newPage.locator("[name=\"q\"]");
     await searchElement.click();
     await searchElement.type("LambdaTest Blog");
